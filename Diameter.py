@@ -166,8 +166,8 @@ class Msg:
     attrs['code'] = unpack24(read_exactly(f, 3))
 
     attrs['app_id'] = unpack('!L', read_exactly(f, 4))[0]
-    attrs['e2e_id'] = unpack('!L', read_exactly(f, 4))[0]
     attrs['h2h_id'] = unpack('!L', read_exactly(f, 4))[0]
+    attrs['e2e_id'] = unpack('!L', read_exactly(f, 4))[0]
 
     length = attrs['total_length']
     length -= 20
