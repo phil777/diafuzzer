@@ -221,13 +221,13 @@ class Msg:
 
     f.write(pack('!L', self.app_id))
 
-    if self.e2e_id is None:
-      self.e2e_id = randint(0, pow(2, 32)-1)
-    f.write(pack('!L', self.e2e_id))
-
     if self.h2h_id is None:
       self.h2h_id = randint(0, pow(2, 32)-1)
     f.write(pack('!L', self.h2h_id))
+
+    if self.e2e_id is None:
+      self.e2e_id = randint(0, pow(2, 32)-1)
+    f.write(pack('!L', self.e2e_id))
 
     f.write(content)
 
